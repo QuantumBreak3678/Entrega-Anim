@@ -7,7 +7,8 @@ using UnityEngine.Animations.Rigging;
 public class IKSlider : MonoBehaviour
 {
     public Slider sliderUI; 
-    public TwoBoneIKConstraint twoBoneIKConstraint; 
+    public TwoBoneIKConstraint twoBoneIKConstraint;
+    public Animator Running; 
 
  
   
@@ -17,5 +18,11 @@ public class IKSlider : MonoBehaviour
         float sliderValue = sliderUI.value;
 
         twoBoneIKConstraint.weight = sliderValue;
-        }
+        
+    }
+
+    public void Button()
+    {
+        Running.SetBool("Run", true);
+    }
 }
